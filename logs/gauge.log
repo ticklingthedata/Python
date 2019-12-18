@@ -1,0 +1,182 @@
+14-11-2019 00:30:17.408 [Gauge] [DEBUG] Plugin python is already installed.
+14-11-2019 00:30:17.408 [Gauge] [DEBUG] Plugin html-report is already installed.
+14-11-2019 00:30:18.002 [python] [INFO] Python: 3.6.8
+14-11-2019 00:30:18.002 [python] [DEBUG] Loading step implemetations from /home/alaaeddine/ticksmith/flinks_qa_challenge/steps dirs.
+14-11-2019 00:30:18.022 [python] [DEBUG] Starting TCP server..
+14-11-2019 00:30:18.022 [python] [DEBUG] Connecting to port 33925
+14-11-2019 00:30:18.102 [Gauge] [DEBUG] Checking updates...
+14-11-2019 00:30:18.102 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/html-report?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:30:18.318 [Gauge] [INFO] # Test specification: Flinks challenge
+14-11-2019 00:30:18.318 [Gauge] [INFO] ## Scenario: End to end test (auth, assert, filter and present)
+14-11-2019 00:30:18.318 [Gauge] [DEBUG] * For each test case, get RequestId using the following connection information 
+
+   |instance   |customerId                          |institution  |username                |password|expectedStatusCode|
+   |-----------|------------------------------------|-------------|------------------------|--------|------------------|
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|Greatday                |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_disabled_account   |Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_service_unavailable|Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_dispatched         |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_pending            |Everyday|203               |
+14-11-2019 00:30:18.598 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/python?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:30:18.731 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/screenshot?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:30:27.091 [Gauge] [DEBUG] * Authorize each RequestId (!=401) using the following challenges: 
+
+   |Question                          |Answer  |
+   |----------------------------------|--------|
+   |What city were you born in?       |Montreal|
+   |What is the best country on earth?|Canada  |
+   |What shape do people like most?   |Triangle|
+14-11-2019 00:30:32.842 [Gauge] [DEBUG] * Get the accounts detail for each authorized request
+
+14-11-2019 00:30:45.838 [Gauge] [DEBUG] * Filter the details and present the results in the desired format
+
+14-11-2019 00:30:46.011 [Gauge] [INFO] Closing connection [127.0.0.1:59848] cause: read tcp 127.0.0.1:37611->127.0.0.1:59848: read: connection reset by peer
+14-11-2019 00:30:46.103 [Gauge] [DEBUG] Plugin [Html Report] with pid [28845] has exited
+14-11-2019 00:30:46.205 [Gauge] [INFO] Specifications:	1 executed	1 passed	0 failed	0 skipped
+14-11-2019 00:30:46.205 [Gauge] [INFO] Scenarios:	1 executed	1 passed	0 failed	0 skipped
+14-11-2019 00:30:46.205 [Gauge] [INFO] 
+Total time taken: 27.979s
+14-11-2019 00:37:09.090 [Gauge] [DEBUG] Plugin python is already installed.
+14-11-2019 00:37:09.091 [Gauge] [DEBUG] Plugin html-report is already installed.
+14-11-2019 00:37:09.606 [Gauge] [DEBUG] Checking updates...
+14-11-2019 00:37:09.606 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/html-report?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:37:09.686 [python] [INFO] Python: 3.6.8
+14-11-2019 00:37:09.686 [python] [DEBUG] Loading step implemetations from /home/alaaeddine/ticksmith/flinks_qa_challenge/steps dirs.
+14-11-2019 00:37:09.705 [python] [DEBUG] Starting TCP server..
+14-11-2019 00:37:09.705 [python] [DEBUG] Connecting to port 33453
+14-11-2019 00:37:09.999 [Gauge] [INFO] # Test specification: Flinks challenge
+14-11-2019 00:37:09.999 [Gauge] [INFO] ## Scenario: End to end test (auth, assert, filter and present)
+14-11-2019 00:37:09.999 [Gauge] [DEBUG] * For each test case, get RequestId using the following connection information 
+
+   |instance   |customerId                          |institution  |username                |password|expectedStatusCode|
+   |-----------|------------------------------------|-------------|------------------------|--------|------------------|
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|Greatday                |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_disabled_account   |Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_service_unavailable|Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_dispatched         |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_pending            |Everyday|203               |
+14-11-2019 00:37:10.039 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/python?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:37:10.167 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/screenshot?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:37:18.691 [Gauge] [DEBUG] * Authorize each RequestId (!=401) using the following challenges: 
+
+   |Question                          |Answer  |
+   |----------------------------------|--------|
+   |What city were you born in?       |Montreal|
+   |What is the best country on earth?|Canada  |
+   |What shape do people like most?   |Triangle|
+14-11-2019 00:37:23.589 [Gauge] [DEBUG] * Get the accounts detail for each authorized request
+
+14-11-2019 00:37:30.209 [Gauge] [DEBUG] * Filter the details and present the results in the desired format
+
+14-11-2019 00:37:30.435 [Gauge] [ERROR] Failed Step: Filter the details and present the results in the desired format
+14-11-2019 00:37:30.435 [Gauge] [ERROR] Error Message: Exception occurred
+14-11-2019 00:37:30.435 [Gauge] [ERROR] Specification: specs/flinks_challenge.md:26
+14-11-2019 00:37:30.435 [Gauge] [ERROR] Stacktrace: 
+Traceback (most recent call last):
+  File "/home/alaaeddine/.local/lib/python3.6/site-packages/getgauge/executor.py", line 31, in execute_method
+    step.impl(*params)
+  File "/home/alaaeddine/ticksmith/flinks_qa_challenge/steps/flinks_challenge.py", line 180, in filter_account_detail
+    "BiggestCreditTrxId"])
+AssertionError
+14-11-2019 00:37:30.445 [Gauge] [INFO] Closing connection [127.0.0.1:45018] cause: read tcp 127.0.0.1:33785->127.0.0.1:45018: read: connection reset by peer
+14-11-2019 00:37:30.537 [Gauge] [DEBUG] Plugin [Html Report] with pid [28979] has exited
+14-11-2019 00:37:30.637 [Gauge] [INFO] Specifications:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:37:30.638 [Gauge] [INFO] Scenarios:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:37:30.638 [Gauge] [INFO] 
+Total time taken: 20.729s
+14-11-2019 00:38:23.966 [Gauge] [DEBUG] Plugin python is already installed.
+14-11-2019 00:38:23.967 [Gauge] [DEBUG] Plugin html-report is already installed.
+14-11-2019 00:38:24.497 [Gauge] [DEBUG] Checking updates...
+14-11-2019 00:38:24.497 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/html-report?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:38:24.560 [python] [INFO] Python: 3.6.8
+14-11-2019 00:38:24.560 [python] [DEBUG] Loading step implemetations from /home/alaaeddine/ticksmith/flinks_qa_challenge/steps dirs.
+14-11-2019 00:38:24.580 [python] [DEBUG] Starting TCP server..
+14-11-2019 00:38:24.580 [python] [DEBUG] Connecting to port 45925
+14-11-2019 00:38:24.871 [Gauge] [INFO] # Test specification: Flinks challenge
+14-11-2019 00:38:24.871 [Gauge] [INFO] ## Scenario: End to end test (auth, assert, filter and present)
+14-11-2019 00:38:24.872 [Gauge] [DEBUG] * For each test case, get RequestId using the following connection information 
+
+   |instance   |customerId                          |institution  |username                |password|expectedStatusCode|
+   |-----------|------------------------------------|-------------|------------------------|--------|------------------|
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|Greatday                |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_disabled_account   |Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_service_unavailable|Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_dispatched         |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_pending            |Everyday|203               |
+14-11-2019 00:38:24.923 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/python?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:38:25.061 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/screenshot?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:38:33.481 [Gauge] [DEBUG] * Authorize each RequestId (!=401) using the following challenges: 
+
+   |Question                          |Answer  |
+   |----------------------------------|--------|
+   |What city were you born in?       |Montreal|
+   |What is the best country on earth?|Canada  |
+   |What shape do people like most?   |Triangle|
+14-11-2019 00:38:38.401 [Gauge] [DEBUG] * Get the accounts detail for each authorized request
+
+14-11-2019 00:38:46.167 [Gauge] [DEBUG] * Filter the details and present the results in the desired format
+
+14-11-2019 00:38:46.383 [Gauge] [ERROR] Failed Step: Filter the details and present the results in the desired format
+14-11-2019 00:38:46.383 [Gauge] [ERROR] Error Message: Exception occurred
+14-11-2019 00:38:46.383 [Gauge] [ERROR] Specification: specs/flinks_challenge.md:26
+14-11-2019 00:38:46.383 [Gauge] [ERROR] Stacktrace: 
+Traceback (most recent call last):
+  File "/home/alaaeddine/.local/lib/python3.6/site-packages/getgauge/executor.py", line 31, in execute_method
+    step.impl(*params)
+  File "/home/alaaeddine/ticksmith/flinks_qa_challenge/steps/flinks_challenge.py", line 180, in filter_account_detail
+    'BiggestCreditTrxId'])
+AssertionError
+14-11-2019 00:38:46.394 [Gauge] [INFO] Closing connection [127.0.0.1:37688] cause: read tcp 127.0.0.1:41297->127.0.0.1:37688: read: connection reset by peer
+14-11-2019 00:38:46.485 [Gauge] [DEBUG] Plugin [Html Report] with pid [29045] has exited
+14-11-2019 00:38:46.585 [Gauge] [INFO] Specifications:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:38:46.586 [Gauge] [INFO] Scenarios:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:38:46.586 [Gauge] [INFO] 
+Total time taken: 21.803s
+14-11-2019 00:39:18.013 [Gauge] [DEBUG] Plugin python is already installed.
+14-11-2019 00:39:18.013 [Gauge] [DEBUG] Plugin html-report is already installed.
+14-11-2019 00:39:18.547 [Gauge] [DEBUG] Checking updates...
+14-11-2019 00:39:18.547 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/html-report?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:39:18.647 [python] [INFO] Python: 3.6.8
+14-11-2019 00:39:18.647 [python] [DEBUG] Loading step implemetations from /home/alaaeddine/ticksmith/flinks_qa_challenge/steps dirs.
+14-11-2019 00:39:18.668 [python] [DEBUG] Starting TCP server..
+14-11-2019 00:39:18.668 [python] [DEBUG] Connecting to port 37829
+14-11-2019 00:39:18.974 [Gauge] [INFO] # Test specification: Flinks challenge
+14-11-2019 00:39:18.974 [Gauge] [INFO] ## Scenario: End to end test (auth, assert, filter and present)
+14-11-2019 00:39:18.975 [Gauge] [DEBUG] * For each test case, get RequestId using the following connection information 
+
+   |instance   |customerId                          |institution  |username                |password|expectedStatusCode|
+   |-----------|------------------------------------|-------------|------------------------|--------|------------------|
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|Greatday                |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_disabled_account   |Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_service_unavailable|Everyday|401               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_dispatched         |Everyday|203               |
+   |toolbox-api|43387ca6-0391-4c82-857d-70d95f087ecb|FlinksCapital|test_pending            |Everyday|203               |
+14-11-2019 00:39:18.975 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/python?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:39:19.112 [Gauge] [DEBUG] Downloading https://downloads.gauge.org/plugin/screenshot?l=python&p=html-report,python,screenshot&o=linux&a=amd64
+14-11-2019 00:39:27.431 [Gauge] [DEBUG] * Authorize each RequestId (!=401) using the following challenges: 
+
+   |Question                          |Answer  |
+   |----------------------------------|--------|
+   |What city were you born in?       |Montreal|
+   |What is the best country on earth?|Canada  |
+   |What shape do people like most?   |Triangle|
+14-11-2019 00:39:32.254 [Gauge] [DEBUG] * Get the accounts detail for each authorized request
+
+14-11-2019 00:39:44.114 [Gauge] [DEBUG] * Filter the details and present the results in the desired format
+
+14-11-2019 00:39:44.332 [Gauge] [ERROR] Failed Step: Filter the details and present the results in the desired format
+14-11-2019 00:39:44.332 [Gauge] [ERROR] Error Message: Exception occurred
+14-11-2019 00:39:44.332 [Gauge] [ERROR] Specification: specs/flinks_challenge.md:26
+14-11-2019 00:39:44.332 [Gauge] [ERROR] Stacktrace: 
+Traceback (most recent call last):
+  File "/home/alaaeddine/.local/lib/python3.6/site-packages/getgauge/executor.py", line 31, in execute_method
+    step.impl(*params)
+  File "/home/alaaeddine/ticksmith/flinks_qa_challenge/steps/flinks_challenge.py", line 180, in filter_account_detail
+    'BiggestCreditTrxId'])
+AssertionError
+14-11-2019 00:39:44.342 [Gauge] [INFO] Closing connection [127.0.0.1:55206] cause: read tcp 127.0.0.1:38411->127.0.0.1:55206: read: connection reset by peer
+14-11-2019 00:39:44.434 [Gauge] [DEBUG] Plugin [Html Report] with pid [29108] has exited
+14-11-2019 00:39:44.535 [Gauge] [INFO] Specifications:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:39:44.535 [Gauge] [INFO] Scenarios:	1 executed	0 passed	1 failed	0 skipped
+14-11-2019 00:39:44.535 [Gauge] [INFO] 
+Total time taken: 25.664s

@@ -1,0 +1,32 @@
+Python: 3.6.8
+
+# Test specification: Flinks challenge
+
+  ## Scenario: End to end test (auth, assert, filter and present) 
+      
+Testing with user: Greatday
+Testing with user: test_disabled_account
+Testing with user: test_service_unavailable
+Testing with user: test_dispatched
+Testing with user: test_pending
+ ✔
+
+Authorizing: 158a0536-4338-434f-b317-ad031b09976b
+Authorizing: b7adfc52-b2a7-48ad-87d8-6b91044ce4b9
+Authorizing: d919f7f1-272d-4877-a021-38f87f7070e4
+ ✔
+
+Getting account detail for requestId: 158a0536-4338-434f-b317-ad031b09976b
+Getting account detail for requestId: b7adfc52-b2a7-48ad-87d8-6b91044ce4b9
+Getting account detail for requestId: d919f7f1-272d-4877-a021-38f87f7070e4
+ ✔
+
+Result in the desired format: {'LoginId': None, 'RequestId': '158a0536-4338-434f-b317-ad031b09976b', 'Holder': {'Name': 'John Doe', 'Email': 'johndoe@flinks.io'}, 'OperationAccounts': [{'AccountNumber': '1111000'}, {'AccountNumber': '1111001'}], 'USDAccounts': [{'Balance': 24992.93}], 'BiggestCreditTrxId': '00000000-0000-0000-0000-000000000000'}
+ ✔
+
+Successfully generated html-report to => /home/alaaeddine/flinks_qa_challenge/reports/html-report/index.html
+Specifications: 1 executed      1 passed        0 failed        0 skipped
+Scenarios:      1 executed      1 passed        0 failed        0 skipped
+
+Total time taken: 24.962s
+
