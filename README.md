@@ -50,4 +50,4 @@ Challenge steps can be summarized as following:
 5. Copy/Rewrite your structure with the provided package structure.
 6. Navigate to the *specs* folder and execute **gauge run *your_spec_name*** 
 
-If you experience any issues, please contact alaaeddine.elhennach@gmail.com.
+If you experience any issues, please contact ticklingthedata@gmail.com.
