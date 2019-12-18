@@ -2,7 +2,9 @@
 
 ## Purpose
 
-This package exists as a solution proposal to the Flinks challenge.
+This package exists as a solution proposal to the Flinks challenge:
+
+https://github.com/ticklingthedata/flinks-challenge/blob/master/Flinks_QA_Software_Developer_Challenge.docx
 
 ## Challenge solution workflow:
 
