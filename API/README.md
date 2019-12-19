@@ -38,8 +38,7 @@ The are 3 basic rules:
 
 or simply:
 
-The only thing you have to do is replacing the base endpoint in the file (iggy's one in this case)
-by the base endpoint of your client (and eventually the username/password to use your own user).
+The only thing you have to do is replacing the base endpoint in the file by the base endpoint of your client (and eventually the username/password to use your own user).
 
 
 ## Automation prerequisites:
