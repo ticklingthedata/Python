@@ -1,0 +1,1 @@
+product,bank,sub_category,16:02,prod/raw/incoming/sub_category/PROD

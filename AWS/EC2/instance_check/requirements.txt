@@ -1,0 +1,8 @@
+boto3
+collections
+sys
+termcolor
+pandas
+flatten_dict
+tabulate
+
