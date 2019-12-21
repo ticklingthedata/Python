@@ -1,6 +1,6 @@
 # QA-Automation
 
-A collection of samples of my work using Python and Gauge framework to automate testing.
+A collection of samples of my work using Python.
 
 ## License
 
