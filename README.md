@@ -1,4 +1,4 @@
-# QA-Automation
+# Python code examples
 
 A collection of samples of my work using Python.
 
