@@ -106,7 +106,7 @@ possible combinations of p variables and select the model that fits the data the
 
 * May be seen as the process of deriving a set of degrees of freedom, which can be used to reproduce most of the variability of a dataset.
 
-# 5. Nonlinearity:
+# 5. Nonlinearity (concepts need definition):
 
 ## Generalized additive models
 
