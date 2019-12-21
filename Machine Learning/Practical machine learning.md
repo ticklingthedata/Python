@@ -1,4 +1,4 @@
-# 1. Introduction to ML
+# 1. Introduction to machine learning
 
 ## Classification
 
