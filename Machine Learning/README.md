@@ -4,4 +4,4 @@
 * The main purpose is to build a high level understanding of the different concepts
 in relation with data science in general and machine learning in particular.
 * Default state of these notes is WIP. 
-* Your are invited to double check the notes and suggest changes.
+* Your are invited to review the notes and suggest changes.
