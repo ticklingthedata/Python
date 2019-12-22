@@ -90,5 +90,44 @@ This of this as a way of “reversing” conditional probabilities.
 ## Random Variables:
 
 * A random variable is a variable whose possible values have an associated probability distribution.
+
 * The associated distribution gives the probabilities that the variable realizes each of its possible values.
+
 * Expected value of a random variable: which is the average of its values weighted by their probabilities.
+
+* Random variables can be conditioned on events just as other events can.
+
+## Continuous Distributions:
+
+* Used to model distributions across a continuum of outcomes. For example, the *uniform distribution* puts *equal weight* on all the numbers between 0 and 1.
+* Because there are infinitely many numbers between 0 and 1, this means that the weight it assigns to individual points must necessarily be zero.
+* For this reason, we represent a continuous distribution with a *probability density function*(PDF) such that the probability of seeing a value in a certain interval equals the integral of the density function over the interval.
+* the *cumulative distribution function* (CDF) gives the probability that a random variable is less than or equal to a certain value. 
+
+## The Normal Distribution:
+
+* The normal distribution is the classic bell curve–shaped distribution and is completely determined by two parameters: its mean *μ* (mu) and its standard deviation *σ* (sigma). 
+* The mean indicates where the bell is centered, and the standard deviation how “wide” it is.
+* When *μ* = 0 and *σ* = 1, it’s called the *standard normal distribution*.
+
+## The Central Limit Theorem:
+
+* It says (in essence) that a random variable defined as the average of a large number of independent and identically distributed random variables is itself approximately normally distributed.
+
+# 4. Hypothesis and Inference:
+
+## Statistical Hypothesis Testing:
+
+* In the classical setup, we have a null hypothesis *H0* that represents some default position, and some alternative hypothesis *H1* that we’d like to compare it with. 
+
+* Significance: the willingless to make a type 1 error (“false positive”), in which *H0* is rejected even though it’s true. For reasons lost to the annals of history, this willingness is often set at 5% or 1%.
+
+* Power of a test: which is the probability of not making a type 2 error (“false negative”), in which *H0* is not rejected even though it’s false.
+
+## p-Values:
+
+* We compute the probability—assuming *H0* is true—that we would see a value at least as extreme as the one we actually observed.
+
+* If the p-value is greater than the significance, the null is not rejected.
+
+## Confidence Intervals:
