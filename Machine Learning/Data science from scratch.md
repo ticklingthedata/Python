@@ -235,7 +235,7 @@ One drawback of the preceding approach is that we had to evaluate the gradients 
 
 * The terminology for the various flavors of gradient descent is not uniform. The “compute the gradient for the whole dataset” approach is often called *batch gradient descent*, and some people say *stochastic gradient descent* when referring to the minibatch version (of which the one-point-at-a-time version is a special case).
 
-# 6. Machine Learning:
+# 6. Machine Learning (general concepts):
 
 Data science is mostly turning business problems into data problems and collecting data and understanding data and cleaning data and formatting data, after which machine learning is almost an afterthought.
 
@@ -284,6 +284,74 @@ Data science is mostly turning business problems into data problems and collecti
 	* Saying “no” too often will give you lots of false negatives.
 
 ## The Bias-Variance Tradeoff:
+
+* Another way of thinking about the overfitting problem is as a tradeoff between bias and variance.
+
+* Both are measures of what would happen if you were to retrain your model many times on different sets of training data (from the same larger population).
+
+* Low variance and high bias typically correspond to underfitting.
+
+* Low bias and high variance corresponds to overfitting.
+
+* If a model has high bias (which means it performs poorly even on your training data), one thing to try is adding more features. Going from the degree X to the degree X+1 model can introduce considerable improvement.
+
+* If your a has high variance, you can similarly remove features. But another solution is to obtain more data (if you can).
+
+## Feature Extraction and Selection:
+
+* Features are whatever inputs we provide to your model.
+
+* Feature types:
+	* Yes or No (typically encoded 1 and 0).
+	* Number. 
+	* Discrete set of options.
+
+* The types of features in hand constrain the types of models you can use:
+	* The Naive Bayes classifier is suited to yes-or-no features.
+	* Regression models require numeric features (which could include dummy variables that are 0s and 1s).
+	* Decision trees can deal with numeric or categorical data.
+
+* Depending on the situation, it might be appropriate to distill features down to a handful of important dimensions (as in “Dimensionality Reduction”) and use only that small number of features. 
+
+* It might also be appropriate to use a technique (like regularization, which we’ll look at in “Regularization”) that penalizes models the more features they use.
+
+# 7. k-Nearest Neighbors:
+
+## The Model:
+
+* Nearest neighbors is one of the simplest predictive models there is. It makes no mathematical assumptions, and it doesn’t require any sort of heavy machinery. The only things it requires are:
+	* Some notion of distance.
+	* An assumption that points that are close to one another are similar.
+
+* Nearest neighbors consciously neglects a lot of information, since the prediction for each new point depends only on the handful of points closest to it.
+
+* What’s more, nearest neighbors is probably not going to help you understand the drivers of whatever phenomenon you’re looking at.
+
+* Pick a number k. Then, when you want to classify some new data point, find the k nearest labeled points and let them vote on the new output.
+
+## The Curse of Dimensionality:
+
+* The k-nearest neighbors algorithm runs into trouble in higher dimensions thanks to the “curse of dimensionality,” which boils down to the fact that high-dimensional spaces are vast. 
+
+* Points in high-dimensional spaces tend not to be close to one another at all. As the number of dimensions increases, the average distance between points increases. But what’s more problematic is the ratio between the closest distance and the average distance. 
+
+* So if you’re trying to use nearest neighbors in higher dimensions, it’s probably a good idea to do some kind of dimensionality reduction first.
+
+# 8. Naive Bayes:
+
+* Bayes’s theorem tells us that the probability of an event A conditional on event B (example: the probability that the message is spam *S* conditional on containing the word bitcoin *B* expressed as: **P(S|B)=[P(B|S)P(S)]/[P(B|S)P(S)+P(B|¬S)P(¬S)**).
+
+* The numerator is the probability that a message is spam and contains bitcoin, while the denominator is just the probability that a message contains bitcoin. Hence, you can think of this calculation as simply representing the proportion of bitcoin messages that are spam.
+
+* Imagine now that we have a vocabulary of many words. The key to Naive Bayes is making the (big) assumption that the presences (or absences) of each word are independent of one another, conditional on a message being spam or not. 
+
+* Intuitively, this assumption means that knowing whether a certain spam message contains the word bitcoin gives you no information about whether that same message contains the word rolex. **This is an extreme assumption** (there’s a reason the technique has naive in its name).
+
+
+
+
+
+
 
 
 
