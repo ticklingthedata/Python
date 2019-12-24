@@ -419,3 +419,110 @@ Data science is mostly turning business problems into data problems and collecti
 * The typical approach to measuring these errors starts with another assumption—that the errors εi are independent normal random variables with mean 0 and some shared (unknown) standard deviation σ.
 
 * In that case, we can use some linear algebra to find the standard error of each coefficient. The larger it is, the less sure our model is about that coefficient. 
+
+## Standard Errors of Regression Coefficients:
+
+* Bootstraping: choosing n data points with replacement from the data, and run computation on those synthetic datasets.
+
+* We repeatedly take a bootstrap_sample of our data and estimate beta based on that sample: 
+	* If the coefficient corresponding to one of the independent variables (say, num_friends) doesn’t vary much across samples, then we can be confident that our estimate is relatively tight. 
+	* If the coefficient varies greatly across samples, then we can’t be at all confident in our estimate.
+
+* After that  we can estimate the standard deviation of each coefficient.
+
+* We can use these to test hypotheses such as “does  βi equal 0?” Under the null hypothesis βi=0 (and with our other assumptions about the distribution of εi), the statistic:
+**tj=ˆβj/ˆσ** (the estimate of βj divided by the estimate of its standard error follows a t-distribution with “n−k degrees of freedom.”)
+
+* As the degrees of freedom get large, the t-distribution gets closer and closer to a standard normal.
+
+* In more elaborate regression scenarios, you sometimes want to test more elaborate hypotheses about the data, such as “at least one of the  βj is nonzero” or “β1 equals  β2 and β3 equals β4”.  You can do this with an *F-test*.
+
+## Regularization:
+
+* Wrinkles of applying linear regression to large datasets:
+	* The more variables you use, the more likely you are to overfit your model to the training set. 
+	* The more nonzero coefficients you have, the harder it is to make sense of them. If the goal is to explain some phenomenon, a sparse model with three factors might be more useful than a slightly better model with hundreds.
+
+* Regularization: is an approach in which we add to the error term a penalty that gets larger as beta gets larger. We then minimize the combined error and penalty. The more importance we place on the penalty term, the more we discourage large coefficients.
+	* For example, in ridge regression, we add a penalty proportional to the sum of the squares of the beta_i (except that typically we don’t penalize beta_0, the constant term).
+	* Another approach is lasso regression. Whereas the ridge penalty shrank the coefficients overall, the lasso penalty tends to force coefficients to be 0, which makes it good for learning sparse models.
+
+# 11. Logistic Regression:
+
+## The Logistic Function:
+
+* As its input gets large and positive, it gets closer and closer to 1. As its input gets large and negative, it gets closer and closer to 0.
+
+* Recall that for linear regression we fit the model by minimizing the sum of squared errors, which ended up choosing the β that maximized the likelihood of the data.
+
+* In the logistic regression, we use gradient descent to maximize the likelihood directly. This means we need to calculate the likelihood function and its gradient: **yi=f(xiβ)+εi**:
+	* Given some β, our model says that each yi should equal 1 with probability f(xiβ) and 0 with probability 1−f(xiβ). 
+	* it’s actually simpler to maximize the log likelihood. Because log is a strictly increasing function, any beta that maximizes the log likelihood also maximizes the likelihood, and vice versa. 
+	* Because gradient descent minimizes things, we can work with the negative log likelihood, since maximizing the likelihood is the same as minimizing its negative.
+	* If we assume different data points are independent from one another, the overall likelihood is just the product of the individual likelihoods. That means the overall log likelihood is the sum of the individual log likelihoods.
+
+## Support Vector Machines:
+
+* The idea behind the support vector machine is to find the hyperplane that maximizes the distance to the nearest point in each class (the best separates the classes in the training data).
+
+* We can sometimes get around this by transforming the data into a higher-dimensional space. This is usually called the kernel trick because rather than actually mapping the points into the higher-dimensional space (which could be expensive if there are a lot of points and the mapping is complicated), we can use a “kernel” function to compute dot products in the higher-dimensional space and use those to find a hyperplane.
+
+# 12. Decision Trees:
+
+## Definition of a Decision Tree:
+
+* A decision tree uses a tree structure to represent a number of possible decision paths and an outcome for each path.
+
+* Decision trees have a lot to recommend them:
+	* They’re very easy to understand and interpret, and the process by which they reach a prediction is completely transparent. 
+	* Unlike the other models we’ve looked at so far, decision trees can easily handle a mix of numeric (e.g., number of legs) and categorical (e.g., delicious/not delicious) attributes and can even classify data for which attributes are missing.
+
+* At the same time: 
+	* Finding an “optimal” decision tree for a set of training data is computationally a very hard problem. 
+	* More important, it is very easy (and very bad) to build decision trees that are overfitted to the training data, and that don’t generalize well to unseen data.
+
+* Most people divide decision trees into classification trees (which produce categorical outputs) and regression trees (which produce numeric outputs).
+
+## Entropy:
+
+* It is the notion of “how much information”. You have probably heard this term used to mean disorder. We use it to represent the uncertainty associated with data:
+	* If all the data points belong to a single class, then there is no real uncertainty, which means we’d like there to be low entropy. 
+	* If the data points are evenly spread across the classes, there is a lot of uncertainty and we’d like there to be high entropy. 
+
+* In math terms, if pi is the proportion of data labeled as class ci, we define the entropy as:
+**H(S)=−p1log2p1−...−pnlog2pn**
+
+* This means the entropy will be small when every pi is close to 0 or 1 (i.e., when most of the data is in a single class), and it will be larger when many of the pi’s are not close to 0 (i.e., when the data is spread across multiple classes).
+
+## The Entropy of a Partition:
+
+* The entropy of a partition results from partitioning a set of data in a certain way. 
+
+* A partition will have low entropy if it splits the data into subsets that themselves have low entropy (i.e., are highly certain), and high entropy if it contains subsets that (are large and) have high entropy (i.e., are highly uncertain).
+
+## Creating a Decision Tree (A simple approach):
+
+* The tree will consist of decision nodes (which ask a question and direct us differently depending on the answer) and leaf nodes (which give us a prediction).
+
+* Given some labeled data, and a list of attributes to consider branching on:
+	* If the data all have the same label, create a leaf node that predicts that label and then stop.
+	* If the list of attributes is empty (i.e., there are no more possible questions to ask), create a leaf node that predicts the most common label and then stop.
+	* Otherwise, try partitioning the data by each of the attributes.
+	* Choose the partition with the lowest partition entropy.
+	* Add a decision node based on the chosen attribute.
+	* Recur on each partitioned subset using the remaining attributes.
+
+* This is what’s known as a “greedy” algorithm because, at each step, it chooses the most immediately best option. Given a dataset, there may be a better tree with a worse-looking first move. If so, this algorithm won’t find it.
+
+## Random Forests:
+
+* Given how closely decision trees can fit themselves to their training data, it’s not surprising that they have a tendency to overfit.
+
+* One way of avoiding this is a technique called *random forests*, in which we build multiple decision trees and combine their outputs. If they’re classification trees, we might let them vote; if they’re regression trees, we might average their predictions.
+
+* To achieve randomness:
+	* Rather than training each tree on all the inputs in the training set, we train each tree on the result of bootstrap_sample(inputs). Since each tree is built using different data, each tree will be different from every other tree. This technique is known as bootstrap aggregating or bagging.
+	* A second source of randomness involves changing the way we choose the best_attribute to split on. Rather than looking at all the remaining attributes, we first choose a random subset of them and then split on whichever of those is best. This is an example of a broader technique called *ensemble learning* in which we combine several weak learners (typically high-bias, low-variance models) in order to produce an overall strong model.
+
+
+
