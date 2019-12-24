@@ -347,12 +347,75 @@ Data science is mostly turning business problems into data problems and collecti
 
 * Intuitively, this assumption means that knowing whether a certain spam message contains the word bitcoin gives you no information about whether that same message contains the word rolex. **This is an extreme assumption** (there’s a reason the technique has naive in its name).
 
+# 9. Simple Linear Regression:
 
+## The Model:
 
+* In particular, you hypothesize that there are constants α (alpha) and β (beta) such that: **yi=βxi+α+εi** where ε is an error term representing the fact that there are other factors not accounted for by this simple model.
 
+* Any choice of alpha and beta gives us a predicted output for each input *xi*. Since we know the actual output *yi*, we can compute the error for each pair.
 
+* What we’d really like to know is the total error over the entire dataset. So instead we add up the squared errors. The least squares solution is to choose the alpha and beta that make the sum of square errors as small as possible.
 
+* The choice of alpha simply says that when we see the average value of the independent variable x, we predict the average value of the dependent variable y.
 
+* The choice of beta means that when the input value increases by standard_deviation(x), the prediction then increases by correlation(x, y) * standard_deviation(y). 
 
+* In the case where x and y are perfectly correlated, a one-standard-deviation increase in x results in a one-standard-deviation-of-y increase in the prediction. 
 
+* When they’re perfectly anticorrelated, the increase in x results in a decrease in the prediction. 
 
+* And when the correlation is 0, beta is 0, which means that changes in x don’t affect the prediction at all.
+
+* A better way to figure out how well we’ve fit the data than staring at the graph is the measure of the coefficient of determination (or **R-squared**), which measures the fraction of the total variation in the dependent variable that is captured by the model.
+
+* R-squared must be at least 0, and at most 1. The higher the number, the better our model fits the data. 
+
+## Maximum Likelihood Estimation:
+
+* Imagine that we have a sample of data v1,...,vn that comes from a distribution that depends on some unknown parameter θ (theta). Under this approach, the most likely θ is the value that maximizes this likelihood function—that is, the value that makes the observed data the most probable. 
+
+* In the case of a continuous distribution, in which we have a probability distribution function rather than a probability mass function, we can do the same thing.
+
+* The likelihood based on the entire dataset is the product of the individual likelihoods, which is largest precisely when alpha and beta are chosen to minimize the sum of squared errors.
+
+* That is, in this case (with these assumptions), minimizing the sum of squared errors is equivalent to maximizing the likelihood of the observed data.
+
+# 10. Multiple Regression:
+
+## The Model:
+
+* each input xi is not a single number but rather a vector of k numbers, xi1, ..., xik. The multiple regression model assumes that: **yi=α+β1xi1+...+βkxik+εi**.
+* In multiple regression the vector of parameters is usually called β. We’ll want this to include the constant term as well, which we can achieve by adding a column of 1s to our data.
+
+## Further Assumptions of the Least Squares Model:
+
+* The first is that the columns of x are linearly independent—that there’s no way to write any one as a weighted sum of some of the others. If this assumption fails, it’s impossible to estimate beta.
+
+* The second important assumption is that the columns of x are all uncorrelated with the errors ε. If this fails to be the case, our estimates of beta will be systematically wrong.
+
+## Fitting the Model:
+
+* As in a linear model, beta is choosen to minimize the sum of squared errors. Finding an exact solution is not simple to do by hand, gradient descent is used to make it easier.
+
+* But in practice, you wouldn’t estimate a linear regression using gradient descent; you’d get the exact coefficients using linear algebra techniques.
+
+## Interpreting the model:
+
+* You should think of the coefficients of the model as representing all-else-being-equal estimates of the impacts of each factor.
+
+* When a model does not capture the interactions between the variables, one alternative could be introducing a new variable(s) to achieve more clarity.
+
+* Once we start adding variables, we need to worry about whether their coefficients “matter.” There are no limits to the numbers of products, logs, squares, and higher powers we could add.
+
+## Goodness of Fit:
+
+* Keep in mind, however, that adding new variables to a regression will necessarily increase the R-squared.
+
+* Because of this, in a multiple regression, we also need to look at the standard errors of the coefficients, which measure how certain we are about our estimates of each βi.
+
+* The regression as a whole may fit our data very well, but if some of the independent variables are correlated (or irrelevant), their coefficients might not mean much.
+
+* The typical approach to measuring these errors starts with another assumption—that the errors εi are independent normal random variables with mean 0 and some shared (unknown) standard deviation σ.
+
+* In that case, we can use some linear algebra to find the standard error of each coefficient. The larger it is, the less sure our model is about that coefficient. 
