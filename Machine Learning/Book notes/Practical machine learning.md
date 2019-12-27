@@ -1,3 +1,7 @@
+# 0. The Book:
+
+* Link: [Practical Machine Learning Cookbook](https://www.amazon.ca/Practical-Machine-Learning-Cookbook-Tripathi-ebook/dp/B01JLBMC9K/ref=sr_1_5?keywords=practical+machine+learning+cookbook&qid=1577462341&s=books&sr=1-5)
+
 # 1. Introduction to machine learning
 
 ## Classification
@@ -111,7 +115,7 @@ possible combinations of p variables and select the model that fits the data the
 ## Generalized additive models
 
 ## Smoothing splines
- 
+
 ## Local regression
 
 # 6. Supervised Learning:
@@ -188,7 +192,7 @@ possible combinations of p variables and select the model that fits the data the
 
 * Continuous-time Markov chains can be labeled as transition systems augmented with rates that have discrete states.
 * The states have continuous time-steps and the delays are exponentially distributed.
- 
+
 ## Monte Carlo simulations:
 
 * These simulations are a stochastic simulations of system behavior.
