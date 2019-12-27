@@ -1,3 +1,7 @@
+# 0. The Book:
+
+* Link: [Data Science from Scratch: First Principles with Python](https://www.amazon.ca/Data-Science-Scratch-Principles-Python/dp/149190142X)
+
 # 1. Linear Algebra:
 
 ## Vectors:
