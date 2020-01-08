@@ -528,5 +528,84 @@ Data science is mostly turning business problems into data problems and collecti
 	* Rather than training each tree on all the inputs in the training set, we train each tree on the result of bootstrap_sample(inputs). Since each tree is built using different data, each tree will be different from every other tree. This technique is known as bootstrap aggregating or bagging.
 	* A second source of randomness involves changing the way we choose the best_attribute to split on. Rather than looking at all the remaining attributes, we first choose a random subset of them and then split on whichever of those is best. This is an example of a broader technique called *ensemble learning* in which we combine several weak learners (typically high-bias, low-variance models) in order to produce an overall strong model.
 
+# 13. Neural Networks:
 
+## Overview:
+
+* An artificial neural network (or neural network for short) is a predictive model motivated by the way the brain operates. 
+
+* Think of the brain as a collection of neurons wired together. Each neuron looks at the outputs of the other neurons that feed into it, does a calculation, and then either fires (if the calculation exceeds some threshold) or doesn’t (if it doesn’t).
+
+* Artificial neural networks consist of artificial neurons, which perform similar calculations over their inputs. 
+
+* Most neural networks are “black boxes”—inspecting their details doesn’t give you much understanding of how they’re solving a problem. And large neural networks can be difficult to train.
+
+## Feed-Forward Neural Networks:
+
+* This consists of discrete layers of neurons, each connected to the next.
+
+* This typically entails:
+	* An input layer (which receives inputs and feeds them forward unchanged).
+	* One or more “hidden layers” (each of which consists of neurons that take the outputs of the previous layer, performs some calculation, and passes the result to the next layer).
+	* An output layer (which produces the final outputs).
+
+* Each (noninput) neuron has a weight corresponding to each of its inputs and a bias.
+
+* We can represent a neuron simply as a vector of weights whose length is one more than the number of inputs to that neuron (because of the bias weight). 
+
+* Then we can represent a neural network as a list of (noninput) layers, where each layer is just a list of the neurons in that layer. That is, we’ll represent a neural network as a list (layers) of lists (neurons) of vectors (weights).
+
+## Backpropagartion:
+
+* This approach is an algorithm which uses gradient descent or one of its variants:
+	* Produce the outputs of all the neurons in the network.	
+	* We know the target output, so we can compute a loss that’s the sum of the squared errors.
+	* Compute the gradient of this loss as a function of the output neuron’s weights.
+	* “Propagate” the gradients and errors backward to compute the gradients with respect to the hidden neurons’ weights.
+	* Take a gradient descent step. 
+	* Typically we run this algorithm many times for our entire training set until the network converges.
+
+# 14. Deep Learning:
+
+* In many neural network libraries, n-dimensional arrays are referred to as *tensors*.
+
+* Layer: something that knows how to apply some function (*activation function*: sigmoid, tanh, Relu, etc) to its inputs and that knows how to backpropagate.
+
+* *Loss functions* can be applied for optimization (softmax, cross-entropy, etc).
+
+* Dropout: a technique that consists in randomly turn off each neuron (that is, replace its output with 0) with some fixed probability. This means that the network can’t learn to depend on any individual neuron, which seems to help with overfitting.
+
+
+# 15. Clustering:
+
+## Overview:
+
+* Belongs to the unsupervised set of ML techniques in which we work with completely unlabeled data (or in which our data has labels but we ignore them).
+
+* There is generally no “correct” clustering.
+
+* Furthermore, the clusters won’t label themselves. You’ll have to do that by looking at the data underlying each one.
+
+## The Model:
+
+* One of the simplest clustering methods is k-means, in which the number of clusters k is chosen in advance. After which the goal is to partition the inputs into sets 
+S1,...,Sk in a way that minimizes the total sum of squared distances from each point to the mean of its assigned cluster.
+
+* There are a lot of ways to assign n points to k clusters, which means that finding an optimal clustering is a very hard problem. We’ll settle for an iterative algorithm that usually finds a good clustering:
+	* Start with a set of k-means, which are points in d-dimensional space.
+	* Assign each point to the mean to which it is closest.
+	* If no point’s assignment has changed, stop and keep the clusters.
+	* If some point’s assignment has changed, recompute the means and return to step 2.
+
+* There are various ways to choose a k. One that’s reasonably easy to understand involves plotting the sum of squared errors (between each point and the mean of its cluster) as a function of k and looking at where the graph “bends”.
+
+## Bottom-Up Hierarchical Clustering:
+
+* An alternative approach to clustering is to “grow” clusters from the bottom up. We can do this in the following way:
+	* Make each input its own cluster of one.
+	* As long as there are multiple clusters remaining, find the two closest clusters and merge them.
+
+* At the end, we’ll have one giant cluster containing all the inputs. If we keep track of the merge order, we can re-create any number of clusters by unmerging. For example, if we want three clusters, we can just undo the last two merges.
+
+* In order to merge the closest clusters, we need some notion of *the distance between clusters*.
 
